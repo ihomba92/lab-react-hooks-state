@@ -10,7 +10,11 @@ export const sampleProducts = [
 
 const ProductList = ({selectedCategory, addToCart}) => {
   //const[cart, setCart] = useState([]);
-  const filteredProducts = sampleProducts.filter(p => selectedCategory === "all" || p.category === selectedCategory)
+  const filteredProducts = sampleProducts.filter((product) =>{ 
+     if (selectedCategory === "all" ){
+       return true
+     }
+    return product.category === selectedCategory})
 
   return (
     <div>
